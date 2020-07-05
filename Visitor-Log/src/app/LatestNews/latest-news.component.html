@@ -1,0 +1,50 @@
+<div class="col-md-12">
+    <h2>Latest News</h2>
+</div>
+<hr>
+
+<div class="col-md-12" *ngFor="let row of lastestNewsList">
+
+    <div style="    margin-top: 10px;
+        margin-left: 40px;
+        font-weight: normal;
+        color: #000000;
+             ">
+        <b>
+                 <span style="   color: blue;">{{row.source.name}}</span>:&nbsp;<span>{{row.author}}</span>
+                 {{row.publishedAt | date:'medium'}}
+             </b>
+        <br>
+        <br>
+        <b>{{row.title}}</b>
+        <br>
+        <br>
+        <!-- <b>{{row.content}}</b> -->
+        <div style="color: #000000;
+             margin-right: 10px;
+             background-color: #ffffff;
+             text-align: left;">
+            <div class="col-md-9" style="    height: 6em;">
+                <font class="ng-tns-c9-5" size="3">
+                    <span class="st1">
+                            <a href="{{row?.url}}" target="_blank">
+                                <img width="100" height="75" border="0" hspace="10" align="left" [src]="row?.urlToImage| safeUrl">
+                            </a>
+                                {{row.description}}
+                            </span>
+
+                </font>
+                <span class="ng-tns-c9-5">
+                    <a style="    background: none;
+                    border: none;
+                    color: blue;
+                    text-align: left;
+                    font-size: 1.4em;
+                    outline: none;" role="button" href="{{row?.url}}" target="_blank">&nbsp; read more... </a></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="mb-10" style="border-top: 1px dotted #636363;"></div>
+
+</div>
